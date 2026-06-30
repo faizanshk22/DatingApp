@@ -1,0 +1,44 @@
+.name-card {
+  width: 600px;
+  max-width: 95%;
+  background: white;
+  padding: 45px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0,0,0,.12);
+}
+
+.name-card h1{
+  color:#ff4d88;
+  margin-bottom:15px;
+}
+
+.name-card p{
+  color:#777;
+  margin-bottom:30px;
+}
+
+.name-card input{
+  width:100%;
+  padding:18px;
+  border-radius:15px;
+  border:2px solid #ffd6e6;
+  font-size:18px;
+  outline:none;
+  margin-bottom:30px;
+}
+
+.name-card input:focus{
+  border-color:#ff4d88;
+}
+
+.name-card button{
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:40px;
+  background:#ff4d88;
+  color:white;
+  font-size:20px;
+  cursor:pointer;
+}

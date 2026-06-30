@@ -15,10 +15,10 @@ const SummaryCard = ({ booking }) => {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
+          name: booking.name,
           date: booking.date?.toDateString(),
           time: booking.time,
-          food: booking.food,
-        },
+food: booking.food.join(", "),        },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
@@ -49,7 +49,10 @@ const SummaryCard = ({ booking }) => {
           <p className="subtitle">
             Here's our little date plan...
           </p>
-
+<div className="summary-item">
+  <span>💕 Name</span>
+  <strong>{booking.name}</strong>
+</div>
           <div className="summary-item">
             <span>📅 Date</span>
             <strong>{booking.date?.toDateString()}</strong>
@@ -62,8 +65,7 @@ const SummaryCard = ({ booking }) => {
 
           <div className="summary-item">
             <span>🍽️ Food</span>
-            <strong>{booking.food}</strong>
-          </div>
+<strong>{booking.food.join(", ")}</strong>          </div>
 
           <button onClick={sendEmail} disabled={sending}>
             {sending ? "Sending..." : "Confirm Booking ❤️"}
@@ -88,7 +90,10 @@ const SummaryCard = ({ booking }) => {
           >
             💕 YAY!! 💕
           </motion.h1>
-
+<div className="summary-item">
+  <span>💕</span>
+  <strong>{booking.name}</strong>
+</div>
           <div className="summary-item">
             <span>📅</span>
             <strong>{booking.date?.toDateString()}</strong>
@@ -101,8 +106,7 @@ const SummaryCard = ({ booking }) => {
 
           <div className="summary-item">
             <span>🍽️</span>
-            <strong>{booking.food}</strong>
-          </div>
+<strong>{booking.food.join(", ")}</strong>            </div>
 
           <h2 className="success-text">
             I can't wait to see you! ❤️✨
