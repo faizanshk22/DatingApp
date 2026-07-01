@@ -5,7 +5,7 @@ const NameCard = ({ booking, setBooking, setStep }) => {
   const handleContinue = () => {
     if (!booking.name.trim()) return;
 
-    setStep(5);
+    setStep(7);
   };
 
   return (
@@ -30,7 +30,10 @@ const NameCard = ({ booking, setBooking, setStep }) => {
         }
       />
 
-      <button onClick={handleContinue}>
+      <button
+        onClick={handleContinue}
+        disabled={!booking.name.trim()}
+      >
         Continue ❤️
       </button>
     </motion.div>

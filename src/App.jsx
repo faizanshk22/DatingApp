@@ -3,7 +3,10 @@ import { useState } from "react";
 import WelcomeCard from "./components/WelcomeCard/WelcomeCard";
 import DateCard from "./components/DateCard/DateCard";
 import FoodCard from "./components/FoodCard/FoodCard";
+import VenueCard from "./components/VenueCard/VenueCard";
+import DressCard from "./components/DressCard/DressCard";
 import NameCard from "./components/NameCard/NameCard";
+import MessageCard from "./components/MessageCard/MessageCard";
 import SummaryCard from "./components/SummaryCard/SummaryCard";
 
 function App() {
@@ -14,11 +17,16 @@ function App() {
     date: null,
     time: "",
     food: [],
+    venue: "",
+    dressCode: "",
+    message: "",
   });
 
   return (
     <div className="app">
-      {step === 1 && <WelcomeCard setStep={setStep} />}
+      {step === 1 && (
+        <WelcomeCard setStep={setStep} />
+      )}
 
       {step === 2 && (
         <DateCard
@@ -37,7 +45,7 @@ function App() {
       )}
 
       {step === 4 && (
-        <NameCard
+        <VenueCard
           setStep={setStep}
           booking={booking}
           setBooking={setBooking}
@@ -45,6 +53,30 @@ function App() {
       )}
 
       {step === 5 && (
+        <DressCard
+          setStep={setStep}
+          booking={booking}
+          setBooking={setBooking}
+        />
+      )}
+
+      {step === 6 && (
+        <NameCard
+          setStep={setStep}
+          booking={booking}
+          setBooking={setBooking}
+        />
+      )}
+
+      {step === 7 && (
+        <MessageCard
+          setStep={setStep}
+          booking={booking}
+          setBooking={setBooking}
+        />
+      )}
+
+      {step === 8 && (
         <SummaryCard
           booking={booking}
           setStep={setStep}

@@ -1,0 +1,117 @@
+.venue-card {
+  width: 850px;
+  max-width: 95%;
+  background: #fff;
+  border-radius: 25px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.venue-card h2 {
+  color: #ff4d88;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 18px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.venue-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.venue-grid::-webkit-scrollbar-thumb {
+  background: #ffb6c1;
+  border-radius: 20px;
+}
+
+.venue-item {
+  background: #fff7fa;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  padding: 20px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.venue-item:hover {
+  transform: translateY(-5px);
+  border-color: #ff7ba5;
+}
+
+.venue-item.selected {
+  background: #ffe4ec;
+  border-color: #ff4d88;
+  box-shadow: 0 0 15px rgba(255, 77, 136, .25);
+}
+
+.venue-item span {
+  font-size: 38px;
+}
+
+.venue-item h3 {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #444;
+}
+
+.selected-venue {
+  margin: 25px 0;
+  color: #ff4d88;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 18px;
+  border: none;
+  border-radius: 40px;
+  background: #ff4d88;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.continue-btn:hover:not(:disabled) {
+  background: #ff2d73;
+}
+
+.continue-btn:disabled {
+  background: #ffc4d7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .venue-card {
+    padding: 25px;
+  }
+
+  .venue-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .venue-item {
+    padding: 15px;
+  }
+
+  .venue-item span {
+    font-size: 30px;
+  }
+
+  .venue-item h3 {
+    font-size: 14px;
+  }
+}

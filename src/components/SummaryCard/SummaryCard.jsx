@@ -18,7 +18,11 @@ const SummaryCard = ({ booking }) => {
           name: booking.name,
           date: booking.date?.toDateString(),
           time: booking.time,
-food: booking.food.join(", "),        },
+          food: booking.food.join(", "),
+          venue: booking.venue,
+          dressCode: booking.dressCode,
+          message: booking.message,
+        },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
@@ -47,12 +51,14 @@ food: booking.food.join(", "),        },
           <h1>💕 It's a Date! 💕</h1>
 
           <p className="subtitle">
-            Here's our little date plan...
+            Here's our perfect little date plan...
           </p>
-<div className="summary-item">
-  <span>💕 Name</span>
-  <strong>{booking.name}</strong>
-</div>
+
+          <div className="summary-item">
+            <span>💕 Name</span>
+            <strong>{booking.name}</strong>
+          </div>
+
           <div className="summary-item">
             <span>📅 Date</span>
             <strong>{booking.date?.toDateString()}</strong>
@@ -65,7 +71,27 @@ food: booking.food.join(", "),        },
 
           <div className="summary-item">
             <span>🍽️ Food</span>
-<strong>{booking.food.join(", ")}</strong>          </div>
+            <strong>{booking.food.join(", ")}</strong>
+          </div>
+
+          <div className="summary-item">
+            <span>📍 Venue</span>
+            <strong>{booking.venue}</strong>
+          </div>
+
+          <div className="summary-item">
+            <span>👔 Dress Code</span>
+            <strong>{booking.dressCode}</strong>
+          </div>
+
+          <div className="summary-item">
+            <span>💌 Message</span>
+            <strong>
+              {booking.message
+                ? booking.message
+                : "No message left ❤️"}
+            </strong>
+          </div>
 
           <button onClick={sendEmail} disabled={sending}>
             {sending ? "Sending..." : "Confirm Booking ❤️"}
@@ -90,10 +116,12 @@ food: booking.food.join(", "),        },
           >
             💕 YAY!! 💕
           </motion.h1>
-<div className="summary-item">
-  <span>💕</span>
-  <strong>{booking.name}</strong>
-</div>
+
+          <div className="summary-item">
+            <span>💕</span>
+            <strong>{booking.name}</strong>
+          </div>
+
           <div className="summary-item">
             <span>📅</span>
             <strong>{booking.date?.toDateString()}</strong>
@@ -106,7 +134,27 @@ food: booking.food.join(", "),        },
 
           <div className="summary-item">
             <span>🍽️</span>
-<strong>{booking.food.join(", ")}</strong>            </div>
+            <strong>{booking.food.join(", ")}</strong>
+          </div>
+
+          <div className="summary-item">
+            <span>📍</span>
+            <strong>{booking.venue}</strong>
+          </div>
+
+          <div className="summary-item">
+            <span>👔</span>
+            <strong>{booking.dressCode}</strong>
+          </div>
+
+          <div className="summary-item">
+            <span>💌</span>
+            <strong>
+              {booking.message
+                ? booking.message
+                : "No message left ❤️"}
+            </strong>
+          </div>
 
           <h2 className="success-text">
             I can't wait to see you! ❤️✨
@@ -115,7 +163,7 @@ food: booking.food.join(", "),        },
           <p className="footer-note">
             (Normal guys send texts,
             <br />
-            I made a website, baby😌)
+            I made a whole website for you 😌❤️)
           </p>
         </motion.div>
       )}
